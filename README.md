@@ -1,4 +1,4 @@
-This s Spring Boot REST API example with scalability best practices:
+This's Spring Boot REST API example with scalability best practices:
 
 Key Features:
 
