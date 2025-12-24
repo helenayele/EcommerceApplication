@@ -5,6 +5,8 @@ import org.example.ecommerce.entity.Product;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -14,9 +16,12 @@ import org.springframework.web.client.RestTemplate;
 @EnableCaching
 @EnableAsync
 @EnableScheduling
+@SpringBootApplication
 public class EcommerceApplication {
     public static void main(String[] args) {
-        SpringApplication.run(EcommerceApplication.class, args);
+        SpringApplication app = new SpringApplication(EcommerceApplication.class);
+        app.setWebApplicationType(WebApplicationType.SERVLET);
+        app.run(args);
     }
 
     @Bean
